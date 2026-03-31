@@ -37,6 +37,6 @@ console.log(`Her age is ${herAge}`) // Her age is 30
 greet()
 
 function greet(){
-    console.log('How are you doing today?')
+    console.log('How are you doing today?') // How are you doing today
 }
 

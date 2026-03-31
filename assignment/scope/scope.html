@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Scope and Scope Chain</title>
+    <script defer src="scope.js"></script>
+</head>
+<body>
+    <h2>JavaScript Scope and Scope Chain</h2>
+    <p><b>Scope:</b> <i>Is where the variable is accessed in JS</i></p>
+    <p><b>Scope Chain:</b> <i>Is the mechanism in JS that defines the hierachy of the scope allowing the machine to traverse from the current, inner most scope to the outermost scope</i></p>
+
+    <h3>Types of scope</h3>
+
+    <ul>
+        <li>
+            <h4>Global Scope</h4>
+            <p>Variables declared with <span style="color: red;">var</span> are the property of windows object in this scope. While those declared with <span style="color: red;">let</span> and <span style="color: red;">const</span> are not the property of the window object.</p>
+            <p>The variables in this scope can be accessed anywhere in the file.</p>
+        </li>
+        <li>
+            <h4>Function Scope</h4>
+            <p>Variables in this scope can only be accessed within this scope. Whether they are declared with <span style="color: red;">var, let <span style="color: black;">or</span> const</span>, they actually behave the same.</p>
+        </li>
+        <li>
+            <h4>Block Scope</h4>
+            <p>Variables declared with <span style="color: red;">let <span style="color: black;">or</span> const</span> have a block scope while those declare with <span style="color: red;">var</span> have no block scope</p>
+        </li>
+        <li>
+            <h4>Module Scope</h4>
+        </li>
+    </ul>
+</body>
+</html>
