@@ -1,0 +1,13 @@
+#cart{
+    border: 1px solid gray;
+    padding: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: bisque;
+    text-align: center;
+    color: red;
+}
+#message{
+    color: red;
+}
