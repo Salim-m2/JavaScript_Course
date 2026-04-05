@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this keyword in JavaScript</title>
+    <link rel="stylesheet" href="thk.css">
+    <script defer src="thk.js"></script>
+</head>
+<body>
+    <h2>The <i style="color: rgb(224, 8, 8);">this</i> keyword in JS</h2>
+    <p><b>The <i style="color: rgb(224, 8, 8);">this</i> keyword: </b><i>Is like a friend or somebody who does not have a firm stand in an argument. In short the <i style="color: rgb(224, 8, 8);">this</i> keyword always changes its value depending on where it is defined.</i></p>
+
+    <h3>Example of the different values of <i style="color: rgb(224, 8, 8);">this</i> in different lexical environment.</h3>
+
+    <ul>
+        <li><h4>In the global scope</h4>
+            <p>The value of <i style="color: rgb(224, 8, 8);">this</i> is the <span style="color: blue;">window object</span></p>
+            <p><code>console.log(this) // window</code> </p>
+        </li>
+
+        <li><h4>Inside an Object</h4>
+            <p>The value of <i style="color: rgb(224, 8, 8);">this</i> is the object in which the function is defined in.</p>
+        </li>
+
+        <li>
+            <h4>Inside a function</h4>
+            <p>The value of <i style="color: rgb(224, 8, 8);">this</i> is bound to the windows object</p>
+        </li>
+
+        <li>
+            <h4>Inside a nested function</h4>
+            <p>The value of <i style="color: rgb(224, 8, 8);">this</i> is bound to the windows object</p>
+        </li>
+
+        <li>
+            <h4>Inside a function under strict mode</h4>
+            <p>The value of <i style="color: rgb(224, 8, 8);">this</i> is undefined.</p>
+        </li>
+
+        <li>
+            <h4>Inside an arrow function</h4>
+            <p>An arrow function does not have its own <i style="color: rgb(224, 8, 8);">this</i> rather the value of <i style="color: rgb(224, 8, 8);">this</i>  is the parent of the scope in which the arrow function is defined</p>
+        </li>
+    </ul>
+</body>
+</html>
