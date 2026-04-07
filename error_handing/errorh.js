@@ -109,10 +109,10 @@ userInfo('johndoe123gmail.com', 'johndoe')
 // Creating a custom error using constructor function.
 
 function ValidationError(message, field){
-    this.name = 'ValidationError',
-    this.message = message,
-    this.field = field,
-    this.stack = (new Error()).stack
+    this.name = 'ValidationError';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack;
 }
 
 // Inherit from Error's Prototype
@@ -166,5 +166,146 @@ try {
 } catch (error) {
     console.error(error.name)
     console.error(error.message)
+}
+
+
+// 3. Implement a custom error handling system for an e-commerce website that categorizes errors as
+
+// UserError
+// PaymentError
+// ServerError
+// EmailError
+
+// UserError
+function UserError(message, field){
+    this.name = 'UserError';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack
+}
+
+// Inherit from the Error's Prototype
+UserError.prototype = Object.create(Error.prototype)
+UserError.prototype.constructor = UserError
+
+
+//PaymentError
+function PaymenError(message, field){
+    this.name = 'PaymenError';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack;
+}
+
+// Inherit from Error's prototype
+PaymenError.prototype = Object.create(Error.prototype)
+PaymenError.prototype.constructor = PaymenError
+
+// ServerError
+function ServerError(message, field){
+    this.name = 'ServerError';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack
+}
+
+// Inherit from the Error's prototype
+ServerError.prototype = Object.create(Error.prototype)
+ServerError.prototype.constructor = ServerError
+
+// EmailError
+function EmailError(message, field){
+    this.name = 'EmailError';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack;
+}
+
+// Inherit from the Error's PRototype
+EmailError.prototype = Object.create(Error.prototype)
+EmailError.prototype.constructor = EmailError
+
+
+// Using the Errors
+
+// UserError
+function userInfo2(name, input){
+    if(name.length < 2){
+        throw new UserError('The username cannot of length less than two', 'name')
+    }
+    if(!input || input === ''){
+        throw new UserError('The field cannot be empty. Please fill in all the details', 'input')
+    }
+
+    return 'Thank you for the feedback.'
+}
+
+try {
+    const theInputs = userInfo2('Salim', '')
+    console.log(theInputs)
+} catch (error) {
+    if(error instanceof UserError){
+        console.error(error.name)
+        console.error(error.message)
+        console.error(error.field)
+    }else{
+        throw error
+    }
+}
+
+// PaymentError
+
+// 4. Simulate an API call function fetchData(url). If the URL does not start with "https", throw an "Invalid URL" error. Handle it using try...catch
+
+function fetchData(url){
+    if(!url.startsWith("https")){
+        throw new Error('The API address must start with https')
+    }
+    return 'The API'
+}
+
+try {
+    const API = fetchData('http://salim.api.com')
+    console.log(API)
+} catch (error) {
+    console.error(error.message)
+}
+
+// 5. Implement a custom error type ValidationError using constructor functions to handle form validation errors
+
+// Creating the custom error
+function ValidationError1(message,field){
+    this.name = 'ValidationError!';
+    this.message = message;
+    this.field = field;
+    this.stack = (new Error()).stack;
+}
+
+// Inherit from the Error's prototype
+
+ValidationError1.prototype = Object.create(Error.prototype)
+ValidationError1.prototype.constructor = ValidationError1
+
+// Using the Error
+
+function validateUser(username, age){
+    if(username === ''){
+        throw new ValidationError1('ValidationError: Username cannot be empty.', 'username')
+    }
+    if(age < 0){
+        throw new ValidationError1('ValidationError: Age must be a postive number.', 'age')
+    }
+}
+
+try {
+    const userInput = {username: 'Sally', age: -2}
+    validateUser(userInput.username, userInput.age)
+    
+} catch (error) {
+    if(error instanceof ValidationError1){
+        console.log(error.message)
+    }else{
+        throw error;
+    }
 }
 
